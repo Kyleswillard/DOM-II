@@ -3,8 +3,9 @@
 
 // Make Brand H1 Blue - Click - 1
 const logo = document.querySelector(".logo-heading");
-logo.addEventListener("click",() => {
+logo.addEventListener("click",(e) => {
 logo.style.color = "blue";
+e.preventDefault()
 
 });
 
@@ -37,7 +38,7 @@ bdy.addEventListener("keydown", () => {
 })
 
 // Onload = Body Color = purple - 7
-window.onload = (e) => {
+window.onload = () => {
   bdy.style.backgroundColor = "purple";
 }
 
@@ -46,16 +47,20 @@ bdy.addEventListener("contextmenu", ()=> {
   bdy.style.backgroundColor = "green"
 });
 
-// mouse enter
-const navExit = document.querySelectorAll("nav a");
-navExit.forEach(link => {
-  link.addEventListener("mouseenter", () => {
-    link.style.backgroundColor = "brown"
-})
-})
+// mouseenter => Nav Links = brown - 9
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(l => {
+  l.addEventListener("mouseover", () => {
+    l.style.color = "red";
+    setTimeout(() => {
+      l.style.color = "gray";
+    }, 500);
+  });
 
-navExit.forEach(link => {
-  link.addEventListener("mouseout", () => {
-    link.style.backgroundColor = "hotpink"
-})
+  //Prevent Default
+  l.addEventListener("click", e => {
+    e.preventDefault();
+  });
+
+
 })
