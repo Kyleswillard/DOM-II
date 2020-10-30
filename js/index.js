@@ -61,6 +61,14 @@ navLinks.forEach(l => {
   l.addEventListener("click", e => {
     e.preventDefault();
   });
+})
 
-
+// Bubbling
+const textDiv = document.querySelector('.text-content')
+textDiv.addEventListener('click', e => {
+  e.target.style.backgroundColor = 'orange'
+}, false)
+const textP = document.querySelector('.text-content p')
+textP.addEventListener("click", e => {
+  e.target.style.backgroundColor = "green"
 })
