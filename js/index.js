@@ -55,13 +55,14 @@ navLinks.forEach(l => {
     setTimeout(() => {
       l.style.color = "gray";
     }, 500);
-  });
-
-  //Prevent Default
+      //Prevent Default
   l.addEventListener("click", e => {
     e.preventDefault();
   });
 })
+  });
+
+
 
 // Bubbling
 const textDiv = document.querySelector('.text-content')
